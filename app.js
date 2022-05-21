@@ -74,6 +74,9 @@ window.addEventListener('scroll', ()=>{
 
 
 
+
+
+
 // Scroll to anchor ID using scrollTO event
 
 /**
@@ -89,13 +92,12 @@ for(let element of navLinks){
     element.addEventListener('click', (evt) =>{
         evt.preventDefault()
         if(evt.target.dataset.link){
-            document.querySelector(`#${evt.target.dataset.link}`).scrollIntoView({block:'start'})
+            document.querySelector(`#${evt.target.dataset.link}`).scrollIntoView({block:'center'})
         }
     })
 }
 
 // Set sections as active
-
 let goTopBtn = document.querySelector("#goTop");
 window.onscroll = function () {
   this.scrollY > 300
@@ -105,4 +107,16 @@ window.onscroll = function () {
 
 goTopBtn.addEventListener('click', function(){
     window.scrollTo(0,0);
+})
+
+
+
+//responsive menu
+let menuIcon = document.getElementById('col-menu');
+menuIcon.addEventListener('click',()=>{
+    if(navbarList.classList.contains('responsive')){
+        navbarList.classList.remove('responsive');
+    }else{
+        navbarList.classList.add('responsive');
+    }
 })
