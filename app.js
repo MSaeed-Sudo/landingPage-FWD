@@ -56,7 +56,7 @@ let navLinks = document.querySelectorAll('.menu__link');
 
 window.addEventListener('scroll', ()=>{
     for(let section of sections){
-            if(section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().bottom <= 1750){
+            if(section.getBoundingClientRect().top >= 0 && section.getBoundingClientRect().bottom <= 1550){
                 section.classList.add('your-active-class');
                 for(let link of navLinks){
                     if(link.getAttribute('data-link') === section.id){
